@@ -1,0 +1,81 @@
+@import '../../scss/style.scss';
+@import '../../scss/global.scss';
+
+.footer {
+  padding: rem(35) 0px;
+}
+
+.catEnergy {
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.container {
+  composes: container from global;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  row-gap: rem(55);
+}
+
+.link {
+
+  .html:hover,
+  svg:hover {
+    color: $gr-color
+  }
+
+  .html:active,
+  svg:active {
+    opacity: 0.3;
+  }
+}
+
+.socials {
+  display: flex;
+  place-items: center;
+  column-gap: rem(37);
+}
+
+.face {
+  width: rem(10);
+  height: rem(19);
+}
+
+.vk {
+  width: rem(22);
+  height: rem(12);
+}
+
+.inst {
+  width: rem(16);
+  height: rem(16);
+}
+
+.copyright {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.html {
+  width: rem(27);
+  height: rem(34);
+  color: $mainColor;
+
+  &:hover {
+    color: $gr-color
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}

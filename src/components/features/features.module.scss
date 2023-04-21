@@ -1,0 +1,53 @@
+@import '../../scss/style.scss';
+@import '../../scss/global.scss';
+
+.container {
+  composes: container from global;
+}
+
+.fearures {
+  padding-bottom: rem(42);
+}
+
+.title {
+  font-size: rem(36);
+  line-height: 1.67;
+  color: #111;
+  font-family: Oswald;
+  margin-bottom: rem(30);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.item {
+  display: flex;
+  column-gap: rem(20);
+  align-items: center;
+  line-height: 1.29;
+
+  &::before {
+    flex: 0 0 rem(60);
+    content: '';
+    height: rem(60);
+    background-color: $gr-color;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &_leaf::before {
+    background-image: url('../../assets/img/advantage-1.png');
+  }
+  &_can::before {
+    background-image: url('../../assets/img/andvantage-2.png');
+  }
+  &_time::before {
+    background-image: url('../../assets/img/advantage-4.png');
+  }
+  &_fork::before {
+    background-image: url('../../assets/img/advantage-3.png');
+  }
+}

@@ -1,0 +1,115 @@
+@use "sass:math";
+@import '../../scss/style.scss';
+@import '../../scss/global.scss';
+
+.example {
+  background-color: #f2f2f2;
+  padding-top: rem(32);
+}
+
+.container {
+  composes: container from global
+}
+
+.title {
+  font-family: Oswald;
+  font-size: rem(36);
+  line-height: 1.67;
+  color: #111;
+  margin-bottom: rem(32);
+  text-align: center;
+}
+
+.text {
+  line-height: 1.29;
+  margin-bottom: rem(27);
+
+}
+
+.statements {
+  display: flex;
+  column-gap: rem(32);
+  margin-bottom: rem(38);
+  justify-content: center
+}
+
+.group {
+  position: relative;
+  border: solid 1px #cdcdcd;
+  width: rem(320);
+  min-height: rem(56);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  dd {
+    font-family: Oswald;
+    font-size: rem(24);
+    color: #111;
+  }
+
+  dl {
+    font-size: rem(11.5);
+    text-align: center;
+    width: rem(90);
+    padding: 0 rem(20);
+    position: absolute;
+    bottom: rem(-15);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f2f2f2;
+    z-index: 1;
+  }
+}
+
+.costs {
+  text-align: center;
+  line-height: 1.43;
+  color: #111;
+  text-transform: uppercase;
+  font-family: Oswald;
+  margin-bottom: rem(44);
+}
+
+.ibg {
+  composes: ibg from global;
+  padding-bottom: math.div(232, 311) * 100%;
+}
+
+.toggler {
+  margin: 0 auto;
+  width: rem(290);
+  min-height: rem(70);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: rem(18);
+  font-size: rem(16);
+  line-height: 1.25;
+  font-family: Oswald;
+  text-transform: uppercase;
+
+  button {
+    width: rem(84);
+    height: rem(14);
+    background-color: #fff;
+    border-radius: 10px;
+    border: 2px solid #d6d6d6;
+    padding: 0 rem(4);
+
+    &::before {
+      content: '';
+      display: block;
+      width: 50%;
+      background-color: $gr-color;
+      height: 50%;
+      border-radius: 10px;
+    }
+  }
+
+  &_active {
+    button {
+      @extend %mirror;
+    }
+  }
+}
