@@ -1,0 +1,126 @@
+@import '../../scss/style.scss';
+@import '../../scss/global.scss';
+
+.header {
+  font-family: Oswald;
+  font-size: rem(20);
+  font-weight: 500;
+  color: #111;
+  text-transform: uppercase;
+}
+
+.container {
+  composes: container from global;
+  position: relative;
+}
+
+.logoWrapper {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  z-index: 2;
+  min-height: 65px;
+  padding: rem(11) 0 rem(16) 0;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto
+}
+
+.logo {
+  width: rem(33);
+  height: rem(38);
+}
+
+.catEnergy {
+  width: rem(101);
+  height: rem(18);
+  margin-left: auto;
+}
+
+.menu {
+  width: 100%;
+  height: auto;
+  margin-top: -100%;
+  transition: all 1s ease;
+
+
+  li {
+    padding: rem(24) rem(15) rem(20);
+    text-align: center;
+  }
+
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: rem(20);
+    line-height: 1;
+  }
+
+
+  &_open {
+    margin-top: 0;
+  }
+}
+
+.iconMenu {
+  display: none;
+  flex-shrink: 0;
+  @include adaptiveValue("margin-left", 62, 400, 320, $tabletWidth, 1);
+
+
+  @media (max-width: $mobile) {
+    display: block;
+    position: relative;
+    width: rem(30);
+    height: rem(18);
+    cursor: pointer;
+    z-index: 5;
+
+    span,
+    &::before,
+    &::after {
+      content: "";
+      transition: all 0.3s ease 0s;
+      right: 0;
+      position: absolute;
+      width: 100%;
+      height: rem(2);
+      background-color: #000;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    span {
+      top: calc(50% - rem(1));
+    }
+
+    &_open {
+      span {
+        width: 0;
+      }
+
+      &::before {
+        top: calc(50% - rem(1));
+        transform: rotate(-45deg);
+      }
+
+      &::after {
+        bottom: calc(50% - rem(1));
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

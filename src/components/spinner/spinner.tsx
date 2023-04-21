@@ -1,5 +1,5 @@
 import { FaSpinner } from 'react-icons/fa';
-import cl from './spinner.module.css';
+import cl from './spinner.module.scss';
 import classNames from 'clsx';
 import { CSSProperties } from 'react';
 
@@ -13,7 +13,7 @@ type SpinnerProps = {
 const Spinner = ({ children, style, variant = 'primary', isActive = false }: SpinnerProps) => (
   isActive
     ?
-    <div style={{
+    <div className={cl.visuallyHidden} style={{
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',

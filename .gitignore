@@ -10,6 +10,7 @@
 
 # production
 /build
+/makets
 
 # misc
 Thumbs.db

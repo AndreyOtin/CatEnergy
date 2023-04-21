@@ -16,5 +16,8 @@ export enum SliceNameSpace {
 }
 
 export enum AppRoute {
-  Login = '/Login'
+  Root = '/',
+  Catalog = '/catalog',
+  Program = '/program',
+  Login = '/login'
 }
