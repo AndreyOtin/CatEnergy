@@ -1,0 +1,33 @@
+@use "sass:math";
+@import '../../scss/style.scss';
+@import '../../scss/global.scss';
+
+
+.container {
+  composes: container from global;
+  display: flex;
+  justify-content: center;
+  column-gap: rem(19);
+}
+
+.container_mod{
+  padding-top: rem(32);
+  padding-bottom: rem(30);
+}
+
+.title {
+  font-family: Oswald;
+  font-size: rem(16);
+  text-transform: uppercase;
+  line-height: 1.25;
+  color: #111;
+}
+
+.address {
+  line-height: 1.43;
+}
+
+.map {
+  padding-bottom: rem(365);
+  background-image: url('../../assets/img/map.png');
+}
