@@ -1,7 +1,7 @@
 @use "sass:math";
 @import "./style";
 
-:global{
+:global {
   .visuallyHidden {
     position: absolute;
     overflow: hidden;
@@ -30,6 +30,7 @@
 
     // Отзывчивая
     .container {
+
       @if ($maxWidthContainer>0) {
         max-width: rem($maxWidthContainer);
         box-sizing: content-box;
@@ -56,6 +57,9 @@
       @else {
         @if ($containerPadding>0) {
           padding: 0 rem(math.div($containerPadding, 2));
+          @media (min-width:$tablet) and (max-width:$pc) {
+            padding: 0 rem(math.div($containerPadding + 30, 2));
+          }
         }
       }
 

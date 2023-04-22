@@ -34,7 +34,7 @@
   li {
     position: relative;
 
-    &:before {
+    &:after {
       counter-increment: item;
       content: counter(item);
       position: absolute;

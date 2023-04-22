@@ -23,7 +23,9 @@
 }
 
 .list {
+  @media (min-width:$mobile){
 
+  }
 }
 
 .title {
@@ -39,14 +41,31 @@
 
   &::before {
     content: '';
-    width: rem(50);
+    width: rem(67);
     height: rem(51);
     background-image: url('../../assets/img/burn-fat.png');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  @media (min-width:$mobile) {
+    display: block;
+
+    &::before {
+      position: absolute;
+      right: rem(30);
+      top: 50%;
+      transform: translateY(-50%);
+      background-image: url('../../assets/img/burning-tablet.png');
+      width: rem(275);
+      height: rem(210);
+    }
   }
 
 }
 
 .item {
+  position: relative;
   background-color: #f2f2f2;
   padding: rem(22) rem(20);
   display: flex;
@@ -55,7 +74,18 @@
 
   &:last-child h3:before {
     background-image: url('../../assets/img/gaining.png');
-    width: 67px;
+
+    @media (min-width:$mobile) {
+      background-image: url('../../assets/img/running-tabl.png');
+    }
+  }
+
+  @media (min-width:$mobile) {
+    margin-bottom: rem(35);
+    padding-right: rem(296);
+    padding-left: rem(60);
+    padding-bottom: rem(60);
+    padding-top: rem(60);
   }
 }
 
@@ -63,6 +93,10 @@
   line-height: 1.29;
   border-bottom: 1px solid rgba($color: #000000, $alpha: 0.3);
   padding-bottom: rem(23);
+
+  @media (min-width:$mobile){
+     border: none;
+  }
 }
 
 .visuallyHidden {

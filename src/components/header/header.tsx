@@ -3,10 +3,20 @@ import { ReactComponent as CatEnergy } from '../../assets/img/icons/cat-energy-m
 import { ReactComponent as Logo } from '../../assets/img/icons/logo-m.svg';
 import { AppRoute } from '../../consts/enum';
 import styles from './header.module.scss';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import useCSSTransition from '../../hooks/useCSSTransition';
+
+const transitionTimeInSec = 1;
 
 function Header() {
   const [isMenuOpen, setMenu] = useState(false);
+  const menu = useRef<HTMLMenuElement>(null);
+  const handleTransition = useCSSTransition(menu, transitionTimeInSec);
+
+  const handleMenuClick = () => {
+    setMenu(!isMenuOpen);
+    handleTransition();
+  };
 
   return (
     <header className={clsx(styles.header)}>
@@ -17,14 +27,20 @@ function Header() {
             <CatEnergy className={styles.catEnergy} />
           </a>
           <button
-            onClick={() => setMenu(!isMenuOpen)}
+            onClick={handleMenuClick}
             type="button"
-            className={clsx(styles.iconMenu, isMenuOpen && styles.iconMenu_open)}
+            className={clsx(
+              styles.iconMenu,
+              isMenuOpen && styles.iconMenu_open
+            )}
           >
             <span></span>
           </button>
         </div>
-        <nav className={clsx(styles.menu, isMenuOpen && styles.menu_open)}>
+        <nav
+          ref={menu}
+          className={clsx(styles.menu, isMenuOpen && styles.menu_open)}
+        >
           <ul>
             <li>
               <a href={AppRoute.Root}>Главная</a>

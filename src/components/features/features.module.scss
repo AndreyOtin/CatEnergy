@@ -3,10 +3,18 @@
 
 .container {
   composes: container from global;
+
+  @media (min-width:$mobile){
+    padding: 0 rem(30) !important;
+  }
 }
 
 .fearures {
   padding-bottom: rem(42);
+
+  @media (min-width:$mobile) {
+    margin-bottom: rem(80);
+  }
 }
 
 .title {
@@ -15,12 +23,44 @@
   color: #111;
   font-family: Oswald;
   margin-bottom: rem(30);
+
+  @media (min-width:$mobile) {
+    font-size: rem(60);
+    line-height: 1;
+    margin-bottom: rem(50);
+  }
 }
 
 .list {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
+
+  @extend %listCounter;
+
+  & li::after {
+    display: none;
+  }
+
+  @media (min-width:$mobile) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: rem(192);
+    row-gap: rem(141);
+
+
+
+    & li::after {
+      display: initial;
+      position: absolute;
+      left: 50%;
+      top: rem(-38);
+      font-size: rem(281);
+      line-height: 1;
+      opacity: 0.1;
+    }
+
+  }
 }
 
 .item {
@@ -29,6 +69,7 @@
   align-items: center;
   line-height: 1.29;
 
+
   &::before {
     flex: 0 0 rem(60);
     content: '';
@@ -36,18 +77,33 @@
     background-color: $gr-color;
     background-repeat: no-repeat;
     background-position: center;
+
+    @media (min-width:$mobile) {
+      width: rem(60);
+    }
   }
 
   &_leaf::before {
     background-image: url('../../assets/img/advantage-1.png');
   }
+
   &_can::before {
     background-image: url('../../assets/img/andvantage-2.png');
   }
+
   &_time::before {
     background-image: url('../../assets/img/advantage-4.png');
   }
+
   &_fork::before {
     background-image: url('../../assets/img/advantage-3.png');
+  }
+
+  @media (min-width:$mobile) {
+    flex: 0 1 200px;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: rem(35);
+
   }
 }
