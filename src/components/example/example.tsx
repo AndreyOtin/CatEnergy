@@ -9,8 +9,14 @@ function Example() {
   const [isToggleActive, setToggle] = useState(false);
   const ref = useRef(null);
   const sliderRef = useRef(null);
+  const isFistRender = useRef(false);
 
   useEffect(() => {
+    if (isFistRender.current) {
+      return;
+    }
+
+    isFistRender.current = true;
     initComparisonSlider(ref, sliderRef);
   }, []);
 

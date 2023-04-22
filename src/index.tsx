@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import HistoryRouter from './components/history-router/history-router';
 import axios from 'axios';
 
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
@@ -18,11 +19,13 @@ async function start() {
 
   const res = await axios('fakeApi/posts');
   root.render(
-    <HistoryRouter>
-      <Provider store={store}>
-        <App data={res.data as []} />
-      </Provider>
-    </HistoryRouter>
+    <React.StrictMode>
+      <HistoryRouter>
+        <Provider store={store}>
+          <App data={res.data as []}/>
+        </Provider>
+      </HistoryRouter>
+    </React.StrictMode>
   );
 }
 
