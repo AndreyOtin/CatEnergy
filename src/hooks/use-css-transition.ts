@@ -1,10 +1,9 @@
 import { RefObject, useRef } from 'react';
 
-
-function useCSSTransition(ref: RefObject<HTMLElement>, seconds: number) {
+function useCssTransition(ref: RefObject<HTMLElement>, seconds: number) {
   const id = useRef<NodeJS.Timeout>();
 
-  const handleTransition = () => {
+  return () => {
     const timerMcs = seconds * 1000;
 
     clearTimeout(id.current);
@@ -13,9 +12,7 @@ function useCSSTransition(ref: RefObject<HTMLElement>, seconds: number) {
       return;
     }
 
-    ref.current.style.transition = `all ${seconds}s ease`;
-
-
+    ref.current.style.transition = `all ${seconds}s ease 0s`;
     id.current = setTimeout(() => {
       if (!ref.current) {
         return;
@@ -24,8 +21,6 @@ function useCSSTransition(ref: RefObject<HTMLElement>, seconds: number) {
       ref.current.style.transition = '';
     }, timerMcs);
   };
-
-  return handleTransition;
 }
 
-export default useCSSTransition;
+export default useCssTransition;

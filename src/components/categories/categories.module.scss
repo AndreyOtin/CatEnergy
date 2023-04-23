@@ -1,5 +1,4 @@
 @import '../../scss/style.scss';
-@import '../../scss/global.scss';
 
 .categories {
   padding: rem(22) 0;
@@ -10,7 +9,7 @@
 }
 
 .link {
-  font-family: Oswald;
+  font-family: Oswald, serif;
   font-size: rem(16);
   text-transform: uppercase;
   display: flex;
@@ -34,7 +33,7 @@
   align-items: center;
   column-gap: rem(20);
   text-transform: uppercase;
-  font-family: Oswald;
+  font-family: Oswald, serif;
   font-size: rem(24);
   line-height: 1.54;
   color: #111;
@@ -61,7 +60,6 @@
       height: rem(210);
     }
   }
-
 }
 
 .item {
@@ -82,10 +80,7 @@
 
   @media (min-width:$mobile) {
     margin-bottom: rem(35);
-    padding-right: rem(296);
-    padding-left: rem(60);
-    padding-bottom: rem(60);
-    padding-top: rem(60);
+    padding: rem(60) rem(296) rem(60) rem(60);
   }
 }
 
@@ -100,5 +95,5 @@
 }
 
 .visuallyHidden {
-  composes: visuallyHidden from global;
+  composes: visually-hidden from global;
 }

@@ -1,4 +1,6 @@
+import '../../scss/style.scss';
 import '../../index.scss';
+import '../../scss/global.module.scss';
 import { Route, Routes } from 'react-router-dom';
 import { AppRoute } from '../../consts/enum';
 import MainPage from '../../pages/main-page/main-page';

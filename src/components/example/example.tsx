@@ -3,22 +3,28 @@ import beforeImg from '../../assets/img/top-desktop.png';
 import styles from './example.module.scss';
 import { useEffect, useRef, useState } from 'react';
 import afterImg from '../../assets/img/after-desktop.png';
-import initComparisonSlider from '../../hooks/useComparisonSlider';
+import SliderContainer from '../slider/slider-container';
+import Slider from '../slider/slider/slider';
+import useResponsive from '../../hooks/use-responsive';
+import { initComparisonSlider } from '../../utils/DOM';
 
 function Example() {
+  const { atMinMobile, atMaxMobile } = useResponsive();
   const [isToggleActive, setToggle] = useState(false);
-  const ref = useRef(null);
+  const sliderContainerRef = useRef<HTMLDivElement>(null);
   const sliderRef = useRef(null);
-  const isFistRender = useRef(false);
 
   useEffect(() => {
-    if (isFistRender.current) {
+    if (!atMinMobile) {
       return;
     }
 
-    isFistRender.current = true;
-    initComparisonSlider(ref, sliderRef);
-  }, []);
+    const removeAll = initComparisonSlider(sliderContainerRef, sliderRef);
+
+    return () => {
+      removeAll?.();
+    };
+  }, [atMinMobile]);
 
   return (
     <section className={styles.example}>
@@ -43,30 +49,12 @@ function Example() {
           </dl>
           <p className={styles.costs}>Затраты на питание: 15 000 руб.</p>
         </div>
-        <div ref={ref} className={clsx(styles.sliderContainer)}>
-          <div>
-            <img src={afterImg} alt="cat" style={{ objectFit: 'contain' }} />
-          </div>
-          <div
-            style={{
-              left: ' -55px',
-              top: '20px'
-            }}
-          >
-            <img
-              src={beforeImg}
-              alt="cat"
-              style={{
-                objectPosition: 'left'
-              }}
-            />
-          </div>
-        </div>
+        {atMinMobile && <SliderContainer ref={sliderContainerRef}/>}
         <div className={clsx(styles.ibg)}>
           {isToggleActive ? (
-            <img src={afterImg} style={{ objectFit: 'contain' }} alt="cat" />
+            <img src={afterImg} style={{ objectFit: 'contain' }} alt="cat"/>
           ) : (
-            <img src={beforeImg} alt="cat" />
+            <img src={beforeImg} alt="cat"/>
           )}
         </div>
         <div
@@ -76,10 +64,8 @@ function Example() {
           )}
         >
           Было
-          <button onClick={() => setToggle(!isToggleActive)} title="toggler" />
-          <div className={styles.slider}>
-            <div ref={sliderRef} className={styles.pin}></div>
-          </div>
+          {atMaxMobile && <button onClick={() => setToggle(!isToggleActive)} title="toggler"/>}
+          {atMinMobile && <Slider ref={sliderRef}/>}
           Стало
         </div>
       </div>

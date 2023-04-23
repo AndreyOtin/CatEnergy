@@ -1,0 +1,23 @@
+@use "sass:math";
+@import '../../scss/style.scss';
+
+.sliderContainer {
+  position: relative;
+  margin: 0 auto;
+  width: 708px;
+  height: 525px;
+
+  div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

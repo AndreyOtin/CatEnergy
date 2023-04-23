@@ -1,6 +1,5 @@
 @use "sass:math";
 @import '../../scss/style.scss';
-@import '../../scss/global.scss';
 
 .promo {
   padding: rem(65) 0px 0px 0px;
@@ -15,7 +14,6 @@
     padding-bottom: rem(400) !important;
   }
 }
-
 
 .textContent {
   position: absolute;

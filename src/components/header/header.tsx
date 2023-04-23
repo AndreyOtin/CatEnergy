@@ -4,14 +4,14 @@ import { ReactComponent as Logo } from '../../assets/img/icons/logo-m.svg';
 import { AppRoute } from '../../consts/enum';
 import styles from './header.module.scss';
 import { useRef, useState } from 'react';
-import useCSSTransition from '../../hooks/useCSSTransition';
+import useCssTransition from '../../hooks/use-css-transition';
 
 const transitionTimeInSec = 1;
 
 function Header() {
   const [isMenuOpen, setMenu] = useState(false);
   const menu = useRef<HTMLMenuElement>(null);
-  const handleTransition = useCSSTransition(menu, transitionTimeInSec);
+  const handleTransition = useCssTransition(menu, transitionTimeInSec);
 
   const handleMenuClick = () => {
     setMenu(!isMenuOpen);

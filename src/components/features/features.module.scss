@@ -1,11 +1,10 @@
 @import '../../scss/style.scss';
-@import '../../scss/global.scss';
 
 .container {
   composes: container from global;
 
   @media (min-width:$mobile){
-    padding: 0 rem(30) !important;
+    padding: 0 rem(30);
   }
 }
 
