@@ -29,8 +29,8 @@ function Example() {
   return (
     <section className={styles.example}>
       <div className={styles.container}>
-        <h2 className={styles.title}>Живой пример</h2>
         <div className={styles.contentBody}>
+          <h2 className={styles.title}>Живой пример</h2>
           <p className={styles.text}>
             Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на
             Cat Energy Slim. Отличный результат без изнуряющих тренировок! При
@@ -47,26 +47,35 @@ function Example() {
               <dd>60 дней</dd>
             </div>
           </dl>
-          <p className={styles.costs}>Затраты на питание: 15 000 руб.</p>
+          <p className={styles.costs}>
+            <span>Затраты на питание:</span><span>15 000 руб.</span>
+          </p>
         </div>
-        {atMinMobile && <SliderContainer ref={sliderContainerRef}/>}
-        <div className={clsx(styles.ibg)}>
-          {isToggleActive ? (
-            <img src={afterImg} style={{ objectFit: 'contain' }} alt="cat"/>
-          ) : (
-            <img src={beforeImg} alt="cat"/>
-          )}
-        </div>
-        <div
-          className={clsx(
-            styles.toggler,
-            isToggleActive && styles.toggler_active
-          )}
-        >
-          Было
-          {atMaxMobile && <button onClick={() => setToggle(!isToggleActive)} title="toggler"/>}
-          {atMinMobile && <Slider ref={sliderRef}/>}
-          Стало
+        <div className={styles.sliderColumn}>
+          {atMinMobile && <SliderContainer ref={sliderContainerRef} />}
+          <div className={clsx(styles.ibg)}>
+            {isToggleActive ? (
+              <img src={afterImg} style={{ objectFit: 'contain' }} alt="cat" />
+            ) : (
+              <img src={beforeImg} alt="cat" />
+            )}
+          </div>
+          <div
+            className={clsx(
+              styles.toggler,
+              isToggleActive && styles.toggler_active
+            )}
+          >
+            Было
+            {atMaxMobile && (
+              <button
+                onClick={() => setToggle(!isToggleActive)}
+                title="toggler"
+              />
+            )}
+            {atMinMobile && <Slider ref={sliderRef} />}
+            Стало
+          </div>
         </div>
       </div>
     </section>

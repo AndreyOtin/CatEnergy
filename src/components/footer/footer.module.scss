@@ -20,8 +20,13 @@
   composes: container from global;
   display: flex;
   flex-direction: column;
-  place-items: center;
-  row-gap: rem(55);
+  align-items: center;
+  row-gap: rem(50);
+
+  @media (min-width:$mobile){
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .link {
@@ -63,6 +68,11 @@
   width: 100%;
   justify-content: space-between;
   align-items: center;
+
+  @media (min-width:$mobile){
+    width: auto;
+    column-gap: rem(25);
+  }
 }
 
 .html {

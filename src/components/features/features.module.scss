@@ -60,6 +60,9 @@
     }
 
   }
+  @media (min-width:$tablet){
+     column-gap: rem(135);
+  }
 }
 
 .item {

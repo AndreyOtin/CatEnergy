@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 import clsx from 'clsx';
-import styles from './slider.module.scss';
+import styles from './slider-container.module.scss';
 import afterImg from '../../assets/img/after-desktop.png';
 import beforeImg from '../../assets/img/top-desktop.png';
 
@@ -12,7 +12,7 @@ const SliderContainer = forwardRef<HTMLDivElement>((_, ref) => (
     <div
       style={{
         left: ' -55px',
-        top: '20px'
+        top: '20px',
       }}
     >
       <img

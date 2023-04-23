@@ -4,25 +4,36 @@
 .container {
   composes: container from global;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   column-gap: rem(19);
-}
-
-.container_mod{
   padding-top: rem(32);
   padding-bottom: rem(30);
+  @include adaptiveValue("font-size", 16, 20, 320, $mobileWidth, 1);
+
+  @media (min-width:$tablet) {
+    padding: 0;
+  }
+}
+
+.hidden {
+  composes: visually-hidden from global;
 }
 
 .title {
-  font-family: Oswald;
+  width: rem(140);
+  font-family: Oswald, serif;
   font-size: rem(16);
   text-transform: uppercase;
   line-height: 1.25;
   color: #111;
+  @include adaptiveValue("margin-left", 0, 70, 320, $mobileWidth, 1);
+
 }
 
 .address {
+  width: rem(140);
   line-height: 1.43;
+  @include adaptiveValue("margin-right", 0, 70, 320, $mobileWidth, 1);
 }
 
 .map {

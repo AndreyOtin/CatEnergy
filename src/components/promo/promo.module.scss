@@ -3,29 +3,30 @@
 
 .promo {
   padding: rem(65) 0px 0px 0px;
-  position: relative;
 }
 
 .container {
   composes: container from global;
-
+  position: relative;
 
   @media (min-width:$mobile) {
-    padding-bottom: rem(400) !important;
+    padding-bottom: rem(450);
+    @include adaptiveValue("padding-bottom", 450, 550, $mobileWidth, $tabletWidth, 1);
+  }
+
+  @media (min-width:$tablet) {
+    position: static;
+    padding-bottom: rem(300);
   }
 }
 
 .textContent {
-  position: absolute;
-  top: 0;
-  left: 0;
   color: #fff;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  padding: rem(30) rem(30);
+  padding-top: rem(30);
   font-family: Oswald;
   text-align: center;
+  position: relative;
+  z-index: 1;
 
   @media (min-width:$mobile) {
     color: #111;
@@ -38,12 +39,23 @@
 
 .title {
   font-size: rem(36);
-  margin-bottom: rem(20);
+  margin-bottom: rem(30);
+
+  @media (min-width:$mobile) {
+    font-size: rem(60);
+  }
 }
 
 .text {
   font-size: rem(13.5);
   text-transform: uppercase;
+  margin-bottom: rem(300);
+  @include adaptiveValue("margin-bottom", 300, 650, 320, $mobileWidth, 1);
+
+  @media (min-width:$mobile) {
+    font-size: rem(20);
+    margin-bottom: rem(50);
+  }
 }
 
 .link {
@@ -63,32 +75,38 @@
   text-transform: uppercase;
 
   @media (min-width:$mobile) {
-    margin: 0 0 0 math.div(80, 768) * 100%;
     width: rem(241);
     font-size: rem(20);
     line-height: 1;
+    margin: 0;
   }
 }
 
-.ibg {
+.upPhoto {
   composes: ibg from global;
+  width: 100%;
   padding-bottom: math.div(305, 320) * 100%;
-  margin-bottom: rem(135);
+  position: absolute;
+  top: 0;
+  left: 0;
 
-  @media (min-width:$mobile) {
-    padding-bottom: 0;
-
-    img {
-      display: none;
-    }
-
+  @media (min-width:$tablet) {
+    padding: 0;
+    top: 0;
+    right: 0px;
+    left: initial;
+    z-index: -1;
+    width: 50%;
+    height: 50%;
+    @include adaptiveValue('width', 720, 1000, 1255, 1920, 1);
+    height: 697px;
   }
 }
 
 .bottomPhoto {
-  @extend %ibg;
+  composes: ibg from global;
   position: absolute;
-  z-index: 25;
+  z-index: 1;
   bottom: math.div(37, 320) * 100%;
   left: 50%;
   transform: translateX(-50%);
@@ -96,8 +114,15 @@
   @include adaptiveValue("padding-bottom", 270, 490, 320, $tabletWidth, 1);
 
   @media (min-width:$mobile) {
-    bottom: math.div(37, 768) * 100%;
+    bottom: rem(76);
     z-index: -1;
     transform: translateX(-60%);
+  }
+
+  @media (min-width:$tablet) {
+    top: 50%;
+    left: 50%;
+    bottom: initial;
+    transform: translate(0, -20%);
   }
 }

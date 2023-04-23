@@ -1,0 +1,60 @@
+@use 'sass:math';
+@import '../../../scss/style.scss';
+
+
+.iconMenu {
+  flex-shrink: 0;
+  @include adaptiveValue("margin-left", 62, 400, 320, $tabletWidth, 1);
+
+  display: block;
+  position: relative;
+  width: rem(30);
+  height: rem(18);
+  cursor: pointer;
+  z-index: 5;
+
+  span,
+  &::before,
+  &::after {
+    content: "";
+    transition: all 0.3s ease 0s;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    height: rem(2);
+    background-color: #000;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  span {
+    top: calc(50% - rem(1));
+  }
+
+  &_open {
+    span {
+      width: 0;
+    }
+
+    &::before {
+      top: calc(50% - rem(1));
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      bottom: calc(50% - rem(1));
+      transform: rotate(45deg);
+    }
+  }
+
+
+  @media (min-width: $mobile) {
+    display: none;
+  }
+}

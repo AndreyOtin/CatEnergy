@@ -4,13 +4,31 @@
 .example {
   background-color: #f2f2f2;
   padding: rem(35) 0;
+
+  @media (min-width:$tablet) {
+    background-color: #fff;
+    background-image: linear-gradient(to bottom, #fff 0 200px, #f2f2f2 200px);
+  }
+
+  @media (min-width:$tablet) {
+    padding-top: 0;
+  }
 }
 
 .container {
   composes: container from global;
 
-  @media (min-width:$mobile) {
-    padding: 0 rem(30);
+
+  @media (min-width:$tablet) {
+    display: flex;
+  }
+}
+
+.sliderColumn {
+
+  @media (min-width:$tablet) {
+    flex: 0 1 50%;
+    margin-left: auto;
   }
 }
 
@@ -20,6 +38,16 @@
     display: flex;
     flex-wrap: wrap;
 
+  }
+
+  @media (min-width:$tablet) {
+    flex: 0 1 auto;
+    width: rem(570);
+  }
+
+  @media (min-width:$tablet) {
+    justify-content: flex-start;
+    width: rem(460);
   }
 
 }
@@ -34,7 +62,12 @@
 
   @media (min-width:$mobile) {
     text-align: left;
+  }
 
+  @media (min-width:$tablet) {
+    margin-top: rem(70);
+    font-size: rem(60);
+    line-height: 1;
   }
 }
 
@@ -46,6 +79,10 @@
     flex: 1 1 100%;
   }
 
+  @media (min-width:$tablet) {
+    margin-top: rem(100);
+  }
+
 }
 
 .statements {
@@ -53,6 +90,12 @@
   column-gap: rem(32);
   margin-bottom: rem(38);
   justify-content: center;
+
+  @media (min-width:$tablet) {
+    margin-bottom: rem(60);
+  }
+
+  @media (min-width:$tablet) {}
 }
 
 .group {
@@ -88,7 +131,7 @@
     z-index: 1;
   }
 
-  @media (min-width:$mobile) {}
+  @media (min-width:$tablet) {}
 }
 
 .costs {
@@ -98,11 +141,29 @@
   text-transform: uppercase;
   font-family: Oswald, serif;
   margin-bottom: rem(44);
+  min-height: rem(70);
+  display: flex;
+  justify-content: center;
 
   @media (min-width:$mobile) {
     width: rem(135);
     margin-left: auto;
-    text-align: right;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  @media (min-width:$tablet) {
+    flex-direction: row;
+    flex: 1 1 100%;
+    text-align: left;
+    margin-top: auto;
+    margin-bottom: 0;
+
+    gap: rem(57);
+    font-size: rem(20);
+    align-items: center;
+    justify-content: flex-start;
+
   }
 }
 
@@ -157,7 +218,7 @@
   padding-bottom: math.div(232, 311) * 100%;
 
   @media (min-width:$mobile) {
-    display: none !important;
+    display: none;
     ;
   }
 }

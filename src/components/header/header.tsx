@@ -1,14 +1,19 @@
 import clsx from 'clsx';
 import { ReactComponent as CatEnergy } from '../../assets/img/icons/cat-energy-m.svg';
 import { ReactComponent as Logo } from '../../assets/img/icons/logo-m.svg';
+import { ReactComponent as LogoDesk } from '../../assets/img/icons/logo-dsk.svg';
 import { AppRoute } from '../../consts/enum';
 import styles from './header.module.scss';
 import { useRef, useState } from 'react';
 import useCssTransition from '../../hooks/use-css-transition';
+import useResponsive from '../../hooks/use-responsive';
+import { log } from 'console';
+import MenuButton from '../buttons/menu-button/menu-button';
 
 const transitionTimeInSec = 1;
 
 function Header() {
+  const { atMinMobile, atMinTablet } = useResponsive();
   const [isMenuOpen, setMenu] = useState(false);
   const menu = useRef<HTMLMenuElement>(null);
   const handleTransition = useCssTransition(menu, transitionTimeInSec);
@@ -23,19 +28,18 @@ function Header() {
       <div className={styles.container}>
         <div className={clsx(styles.logoWrapper)}>
           <a href={AppRoute.Root} className={styles.logoLink}>
-            <Logo className={styles.logo} />
-            <CatEnergy className={styles.catEnergy} />
-          </a>
-          <button
-            onClick={handleMenuClick}
-            type="button"
-            className={clsx(
-              styles.iconMenu,
-              isMenuOpen && styles.iconMenu_open
+            {atMinTablet ? (
+              <LogoDesk className={styles.logoPc} />
+            ) : (
+              <>
+                <Logo className={styles.logo} />
+                <CatEnergy className={styles.catEnergy} />
+              </>
             )}
-          >
-            <span></span>
-          </button>
+          </a>
+          {!atMinMobile && (
+            <MenuButton onClick={handleMenuClick} isMenuOpen={isMenuOpen} />
+          )}
         </div>
         <nav
           ref={menu}

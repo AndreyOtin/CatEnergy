@@ -22,8 +22,9 @@
 }
 
 .list {
-  @media (min-width:$mobile){
-
+  @media (min-width:$tablet) {
+    display: flex;
+    gap: rem(80);
   }
 }
 
@@ -47,7 +48,7 @@
     background-position: center;
   }
 
-  @media (min-width:$mobile) {
+  @media (min-width:$mobile) and (max-width:$tablet) {
     display: block;
 
     &::before {
@@ -73,7 +74,7 @@
   &:last-child h3:before {
     background-image: url('../../assets/img/gaining.png');
 
-    @media (min-width:$mobile) {
+    @media (min-width:$mobile) and (max-width:$tablet) {
       background-image: url('../../assets/img/running-tabl.png');
     }
   }
@@ -82,6 +83,10 @@
     margin-bottom: rem(35);
     padding: rem(60) rem(296) rem(60) rem(60);
   }
+
+  @media (min-width:$tablet) {
+    padding-right: rem(60);
+  }
 }
 
 .text {
@@ -89,8 +94,8 @@
   border-bottom: 1px solid rgba($color: #000000, $alpha: 0.3);
   padding-bottom: rem(23);
 
-  @media (min-width:$mobile){
-     border: none;
+  @media (min-width:$mobile) {
+    border: none;
   }
 }
 
