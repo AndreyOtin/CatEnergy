@@ -1,0 +1,49 @@
+@use 'sass:math';
+@import '../../scss/style.scss';
+
+
+.formPage {
+  padding-top: rem(65);
+  padding-bottom: rem(30);
+}
+
+
+.container {
+  composes: container from global;
+  font-family: Oswald;
+}
+
+.title {
+  color: #111111;
+  font-size: rem(36);
+  line-height: math.div(60, 36);
+  line-height: 60px;
+  margin-bottom: rem(35);
+  padding-top: rem(20);
+  position: relative;
+
+  &::before {
+    position: absolute;
+    width: 5000px;
+    height: 1px;
+    background-color: #cdcdcd;
+    content: '';
+    left: -150%;
+
+    @media (min-width:$tablet){
+      content: none;
+   }
+  }
+
+  &::before {
+    top: 0;
+  }
+}
+
+.text {
+  color: #111111;
+  font-family: Oswald;
+  line-height: math.div(18, 14, );
+  text-transform: uppercase;
+  margin-bottom: rem(39);
+}

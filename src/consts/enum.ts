@@ -19,5 +19,6 @@ export enum AppRoute {
   Root = '/',
   Catalog = '/catalog',
   Program = '/program',
-  Login = '/login'
+  Login = '/login',
+  Form = '/form'
 }

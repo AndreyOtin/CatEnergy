@@ -1,3 +1,4 @@
+
 import styles from './promo.module.scss';
 import catBc from '../../assets/img/index-background-mobile.webp';
 import can from '../../assets/img/index-can.png.png';
@@ -14,7 +15,7 @@ function Promo() {
         <div className={styles.textContent}>
           <h2 className={styles.title}>Функциональное питание для котов</h2>
           <p className={styles.text}>Занялся собой? Займись котом!</p>
-          <a className={styles.link} href="#todo">
+          <a className={clsx(styles.link)} href="#todo">
             Подобрать программу
           </a>
         </div>

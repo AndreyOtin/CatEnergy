@@ -7,13 +7,14 @@ import styles from './header.module.scss';
 import { useRef, useState } from 'react';
 import useCssTransition from '../../hooks/use-css-transition';
 import useResponsive from '../../hooks/use-responsive';
-import { log } from 'console';
 import MenuButton from '../buttons/menu-button/menu-button';
+import { Link, useMatch } from 'react-router-dom';
 
 const transitionTimeInSec = 1;
 
 function Header() {
   const { atMinMobile, atMinTablet } = useResponsive();
+  const isRootPage = !!useMatch(AppRoute.Root);
   const [isMenuOpen, setMenu] = useState(false);
   const menu = useRef<HTMLMenuElement>(null);
   const handleTransition = useCssTransition(menu, transitionTimeInSec);
@@ -24,7 +25,7 @@ function Header() {
   };
 
   return (
-    <header className={clsx(styles.header)}>
+    <header className={clsx(styles.header, !isRootPage && styles.header_white)}>
       <div className={styles.container}>
         <div className={clsx(styles.logoWrapper)}>
           <a href={AppRoute.Root} className={styles.logoLink}>
@@ -47,13 +48,13 @@ function Header() {
         >
           <ul>
             <li>
-              <a href={AppRoute.Root}>Главная</a>
+              <Link to={AppRoute.Root}>Главная</Link>
             </li>
             <li>
-              <a href={AppRoute.Catalog}>Каталог продукции</a>
+              <Link to={AppRoute.Catalog}>Каталог продукции</Link>
             </li>
             <li>
-              <a href={AppRoute.Program}>Подбор программы</a>
+              <Link to={AppRoute.Program}>Подбор программы</Link>
             </li>
           </ul>
         </nav>

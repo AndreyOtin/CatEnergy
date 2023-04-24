@@ -12,6 +12,7 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
+
 async function start() {
   await worker.start({
     onUnhandledRequest: 'bypass'
