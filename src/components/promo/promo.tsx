@@ -5,6 +5,8 @@ import can from '../../assets/img/index-can.png.png';
 import canTabl from '../../assets/img/index-can.png.png';
 import clsx from 'clsx';
 import useResponsive from '../../hooks/use-responsive';
+import { Link } from 'react-router-dom';
+import { AppRoute } from '../../consts/enum';
 
 function Promo() {
   const { isMobile, isPC } = useResponsive();
@@ -15,9 +17,9 @@ function Promo() {
         <div className={styles.textContent}>
           <h2 className={styles.title}>Функциональное питание для котов</h2>
           <p className={styles.text}>Занялся собой? Займись котом!</p>
-          <a className={clsx(styles.link)} href="#todo">
+          <Link className={clsx(styles.link)} to={AppRoute.Program}>
             Подобрать программу
-          </a>
+          </Link>
         </div>
         {(isPC || isMobile) && (
           <div className={styles.upPhoto}>

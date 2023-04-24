@@ -6,6 +6,7 @@ import { AppRoute } from '../../consts/enum';
 import MainPage from '../../pages/main-page/main-page';
 import Layout from '../layout/layout';
 import FormPage from '../../pages/form-page/form-page';
+import CatalogPage from '../../pages/catalog-page/catalog-page';
 
 function App({ data }: { data: [] }): JSX.Element {
   return (
@@ -13,6 +14,7 @@ function App({ data }: { data: [] }): JSX.Element {
       <Route path={AppRoute.Root} element={<Layout />}>
         <Route index element={<MainPage />} />
         <Route path={AppRoute.Program} element={<FormPage />} />
+        <Route path={AppRoute.Catalog} element={<CatalogPage />} />
         <Route path="*" element={<h2>not found</h2>} />
       </Route>
     </Routes>

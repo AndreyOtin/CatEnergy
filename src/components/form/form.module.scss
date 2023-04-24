@@ -300,6 +300,7 @@
   @media (min-width:$tablet) {
     grid-template-columns: 1fr 1fr;
     margin-top: rem(60);
+    align-items: center;
   }
 }
 

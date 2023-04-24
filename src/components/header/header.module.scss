@@ -8,7 +8,7 @@
   color: #111;
   text-transform: uppercase;
 
-  &_white{}
+  &_white {}
 }
 
 .container {
@@ -37,9 +37,9 @@
     padding: rem(15) 0 rem(16) 0;
   }
 
-  @media (min-width:$tablet){
+  @media (min-width:$tablet) {
     margin-right: 0;
- }
+  }
 }
 
 .logoLink {
@@ -118,12 +118,17 @@
       left: 0;
       right: 0;
 
-      @media (min-width:$tablet){
+      @media (min-width:$tablet) {
         background-color: #fff;
+
+
+        .header_white & {
+          background-color: #000;
+        }
       }
     }
 
-    @media (min-width:$tablet){
+    @media (min-width:$tablet) {
       color: #fff;
       width: 60%;
       margin-left: auto;

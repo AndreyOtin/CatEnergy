@@ -106,3 +106,36 @@
     display: none;
   }
 }
+
+%title {
+  align-items: center;
+  color: #111111;
+  column-gap: rem(22);
+  display: flex;
+  font-family: Oswald;
+  font-size: rem(24);
+  width: 100%;
+  margin-bottom: rem(30);
+  position: relative;
+
+  &::after {
+    background-color: #68b738;
+    content: '';
+    height: 2px;
+    width: 100%;
+  }
+
+  @media (min-width:$tablet) {
+    &::before {
+      content: '';
+      position: absolute;
+      background-color: #68b738;
+      content: '';
+      height: 2px;
+      width: 5000px;
+      left: -5020px;
+      margin-top: rem(4);
+      margin-right: rem(20);
+    }
+  }
+}
