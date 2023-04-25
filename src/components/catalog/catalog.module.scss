@@ -19,6 +19,5 @@
 }
 
 .list {
-  display: grid;
-  row-gap: rem(25);
+  @extend %lineList;
 }

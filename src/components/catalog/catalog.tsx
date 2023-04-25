@@ -11,30 +11,34 @@ import { ButtonCard } from '../cards/button-card/button-card';
 
 type Props = {};
 
-const data: Product[] = [
+export const data: Product[] = [
   {
     image: orangeCan,
     flavor: 'Курица',
     price: 500,
-    volume: 1
+    volume: 1,
+    volumeName: '1 упаковка (30 г)'
   },
   {
     image: greenCan,
     flavor: 'Курица',
     price: 500,
-    volume: 1
+    volume: 1,
+    volumeName: '1 упаковка (100 г)'
   },
   {
     image: blueCan,
     flavor: 'Курица',
     price: 500,
-    volume: 1
+    volume: 1,
+    volumeName: '5 литр'
   },
   {
     image: purpleCan,
     flavor: 'Курица',
     price: 500,
-    volume: 1
+    volume: 1,
+    volumeName: '1 литр'
   }
 ];
 

@@ -3,4 +3,5 @@ export type Product = {
   volume: number;
   flavor: string;
   price: number;
+  volumeName: string;
 };

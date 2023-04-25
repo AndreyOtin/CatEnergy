@@ -8,7 +8,7 @@ import { useRef, useState } from 'react';
 import useCssTransition from '../../hooks/use-css-transition';
 import useResponsive from '../../hooks/use-responsive';
 import MenuButton from '../buttons/menu-button/menu-button';
-import { Link, useMatch } from 'react-router-dom';
+import { NavLink, useMatch } from 'react-router-dom';
 
 const transitionTimeInSec = 1;
 
@@ -48,13 +48,31 @@ function Header() {
         >
           <ul>
             <li>
-              <Link to={AppRoute.Root}>Главная</Link>
+              <NavLink
+                onClick={handleMenuClick}
+                className={({ isActive }) => clsx(isActive && styles.link)}
+                to={AppRoute.Root}
+              >
+                Главная
+              </NavLink>
             </li>
             <li>
-              <Link to={AppRoute.Catalog}>Каталог продукции</Link>
+              <NavLink
+                onClick={handleMenuClick}
+                className={({ isActive }) => clsx(isActive && styles.link)}
+                to={AppRoute.Catalog}
+              >
+                Каталог продукции
+              </NavLink>
             </li>
             <li>
-              <Link to={AppRoute.Program}>Подбор программы</Link>
+              <NavLink
+                onClick={handleMenuClick}
+                className={({ isActive }) => clsx(isActive && styles.link)}
+                to={AppRoute.Program}
+              >
+                Подбор программы
+              </NavLink>
             </li>
           </ul>
         </nav>

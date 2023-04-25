@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Product } from '../../../types/product';
 
 type Props = {
-  product: Product;
+  product: (Omit<Product, 'image' | 'volume'> & { volume: string });
 };
 
 export function AddCard({ product }: Props) {

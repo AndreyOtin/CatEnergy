@@ -7,8 +7,6 @@
   font-weight: 500;
   color: #111;
   text-transform: uppercase;
-
-  &_white {}
 }
 
 .container {
@@ -33,7 +31,7 @@
 
   @media (min-width: $mobile) {
     width: auto;
-    margin-right: rem(80);
+    margin-right: rem(50);
     padding: rem(15) 0 rem(16) 0;
   }
 
@@ -69,8 +67,6 @@
   @media (min-width: $mobile) {
     margin-left: rem(22);
   }
-
-
 }
 
 .menu {
@@ -99,8 +95,9 @@
 
     ul {
       display: flex;
-      column-gap: rem(32);
+      column-gap: rem(35);
       justify-content: flex-end;
+      flex-wrap: wrap;
     }
 
     li {
@@ -109,7 +106,8 @@
       position: relative;
     }
 
-    a:hover::before {
+    a:hover::before,
+    .link::before {
       content: '';
       position: absolute;
       height: rem(2);
@@ -120,7 +118,6 @@
 
       @media (min-width:$tablet) {
         background-color: #fff;
-
 
         .header_white & {
           background-color: #000;

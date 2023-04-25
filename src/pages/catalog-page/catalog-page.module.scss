@@ -1,0 +1,33 @@
+@use 'sass:math';
+@import '../../scss/style.scss';
+
+.container {
+  composes: container from global;
+}
+
+.ibg {
+  align-items: center;
+  composes: ibg from global;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: rem(289);
+  padding: rem(43) rem(60);
+
+  &::before {
+    background-image: url(../../assets//img//catalog/gift.svg.png);
+    content: '';
+    height: rem(60);
+    width: rem(55);
+    z-index: 25;
+  }
+}
+
+.title {
+  color: #ffffff;
+  font-size: rem(16);
+  line-height: math.div(20, 16);
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}

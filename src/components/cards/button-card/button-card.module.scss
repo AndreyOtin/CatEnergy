@@ -1,79 +1,39 @@
 @use 'sass:math';
 @import '../../../scss/style.scss';
 
-
 .card {
+  align-items: center;
   display: flex;
   flex-direction: column;
   min-height: rem(210);
-  align-items: center;
   position: relative;
 
   &::before {
-    content: '+';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: rem(20);
-    line-height: 1;
-    font-size: rem(50);
     color: #222222;
+    content: '+';
+    font-size: rem(50);
+    left: 50%;
+    line-height: 1;
     opacity: 0.2;
+    position: absolute;
+    top: rem(20);
+    transform: translateX(-50%);
   }
 }
 
-.link {
-  grid-column: 1/2;
-  background-color: #f2f2f2;
-  color: #444444;
-  margin-top: rem(21);
-}
-
 .title {
-  width: auto;
-  margin-top: rem(80);
+  @include adaptiveValue("font-size", 16, 32, 320, 768, 1);
+  @extend %generalTitle;
   margin-bottom: rem(11);
+  margin-top: rem(80);
 }
 
-
-// .title {
-//   color: #111111;
-//   font-family: Oswald;
-//   font-size: rem(16);
-//   line-height: math.div(20, 16);
-//   text-transform: uppercase;
-//   width: rem(72);
-//   @include adaptiveValue("width", 72, 400, 320, 768, 1);
-//   @include adaptiveValue("font-size", 16, 32, 320, 768, 1);
-
-//   .item_button & {
-//     width: auto;
-//     margin-top: rem(80);
-//     margin-bottom: rem(11);
-//   }
-// }
-
-
-
-// .link {
-//   align-items: center;
-//   background-color: #68b738;
-//   color: #ffffff;
-//   display: flex;
-//   font-family: Oswald;
-//   font-size: rem(16);
-//   grid-column: 1/3;
-//   justify-content: center;
-//   line-height: math.div(20, 16);
-//   min-height: rem(40);
-//   padding: 0 rem(15);
-//   width: 100%;
-//   align-self: stretch;
-
-//   &_all {
-//     grid-column: 1/2;
-//     background-color: #f2f2f2;
-//     color: #444444;
-//     margin-top: rem(21);
-//   }
-// }
+.link {
+  @extend %button;
+  align-self: stretch;
+  background-color: $bg-color-gray;
+  color: $mainColor;
+  grid-column: 1/2;
+  margin-top: rem(21);
+  width: 100%;
+}

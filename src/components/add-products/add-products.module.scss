@@ -3,21 +3,17 @@
 
 .addProducts {
   padding-top: rem(55);
-
-  .productTitle {
-    line-height: 1;
-    width: auto;
-  }
-
-  .item{
-    display: flex;
-    flex-direction: column
-  }
 }
 
-.addTitle {
+.container {
+  composes: container from global;
+}
+
+.title {
   @extend %title;
   white-space: nowrap;
 }
 
-.ibg {}
+.list {
+  @extend %lineList;
+}
