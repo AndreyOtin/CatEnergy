@@ -1,4 +1,3 @@
-
 import styles from './promo.module.scss';
 import catBc from '../../assets/img/index-background-mobile.webp';
 import can from '../../assets/img/index-can.png.png';

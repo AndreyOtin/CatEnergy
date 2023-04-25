@@ -5,6 +5,7 @@ import Map from '../../components/map/map';
 import Promo from '../../components/promo/promo';
 
 function MainPage() {
+
   return (
     <main>
       <Promo />

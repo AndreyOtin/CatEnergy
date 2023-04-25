@@ -1,0 +1,23 @@
+@use 'sass:math';
+@import '../../scss/style.scss';
+
+.addProducts {
+  padding-top: rem(55);
+
+  .productTitle {
+    line-height: 1;
+    width: auto;
+  }
+
+  .item{
+    display: flex;
+    flex-direction: column
+  }
+}
+
+.addTitle {
+  @extend %title;
+  white-space: nowrap;
+}
+
+.ibg {}

@@ -48,7 +48,8 @@ function Example() {
             </div>
           </dl>
           <p className={styles.costs}>
-            <span>Затраты на питание:</span><span>15 000 руб.</span>
+            <span>Затраты на питание:</span>
+            <span>15 000 руб.</span>
           </p>
         </div>
         <div className={styles.sliderColumn}>
@@ -69,7 +70,9 @@ function Example() {
             Было
             {atMaxMobile && (
               <button
-                onClick={() => setToggle(!isToggleActive)}
+                onClick={() => {
+                  setToggle(!isToggleActive);
+                }}
                 title="toggler"
               />
             )}
