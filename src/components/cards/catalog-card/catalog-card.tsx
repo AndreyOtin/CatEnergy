@@ -58,7 +58,7 @@ export function CatalogCard({
     <li className={clsx(styles.card, isExtra && styles.card_extra)}>
       {isPrimary && imageElement}
       <div className={styles.content}>
-        <h3 className={clsx(styles.title)}>Cat Energy PRO 500 г</h3>
+        <h3 className={styles.title}>Cat Energy PRO <span>{volume} г</span></h3>
         {isPrimary && primaryListElement}
         {isExtra && extraListElement}
       </div>

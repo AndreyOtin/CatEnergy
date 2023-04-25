@@ -3,7 +3,30 @@
 
 .container {
   composes: container from global;
+  flex-wrap: wrap;
+
+  @media (min-width:$pc) {
+    display: flex;
+    padding-top: rem(55);
+    align-items: center;
+  }
 }
+
+.promo {
+  margin: rem(70) 0;
+
+
+  @media (min-width:$pc) {
+    width: rem(245);
+    height: rem(289);
+    flex-shrink: 0;
+    margin: 0;
+    margin-left: 80px;
+
+  }
+}
+
+
 
 .ibg {
   align-items: center;
@@ -13,6 +36,11 @@
   justify-content: space-between;
   min-height: rem(289);
   padding: rem(43) rem(60);
+
+  @media (min-width:$mobile) and (max-width:$pc) {
+    flex-direction: row;
+    justify-content: space-around;
+  }
 
   &::before {
     background-image: url(../../assets//img//catalog/gift.svg.png);
@@ -30,4 +58,9 @@
   position: relative;
   text-align: center;
   z-index: 1;
+
+  @media (min-width:$mobile) and (max-width:$pc) {
+    width: rem(150);
+    text-align: left;
+  }
 }

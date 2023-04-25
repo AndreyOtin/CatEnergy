@@ -24,6 +24,11 @@ function Header() {
     handleTransition();
   };
 
+  const handleNavMenuClick = () => {
+    setMenu(false);
+    handleTransition();
+  };
+
   return (
     <header className={clsx(styles.header, !isRootPage && styles.header_white)}>
       <div className={styles.container}>
@@ -49,7 +54,7 @@ function Header() {
           <ul>
             <li>
               <NavLink
-                onClick={handleMenuClick}
+                onClick={handleNavMenuClick}
                 className={({ isActive }) => clsx(isActive && styles.link)}
                 to={AppRoute.Root}
               >
@@ -58,7 +63,7 @@ function Header() {
             </li>
             <li>
               <NavLink
-                onClick={handleMenuClick}
+                onClick={handleNavMenuClick}
                 className={({ isActive }) => clsx(isActive && styles.link)}
                 to={AppRoute.Catalog}
               >
@@ -67,7 +72,7 @@ function Header() {
             </li>
             <li>
               <NavLink
-                onClick={handleMenuClick}
+                onClick={handleNavMenuClick}
                 className={({ isActive }) => clsx(isActive && styles.link)}
                 to={AppRoute.Program}
               >

@@ -5,16 +5,61 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding-bottom: rem(25);
+  padding-top: rem(25);
+  min-height: rem(211);
+
+  @media (min-width:$mobile) {
+    grid-template-columns: 1fr;
+    background-color: #f2f2f2;
+    padding: rem(40);
+    padding-top: rem(165);
+  }
 
   &_extra {
-   padding-top: rem(14);
+    padding-top: rem(14);
+
+    @media (min-width:$mobile) {
+      border: 1px solid #cdcdcd;
+      background-color: #fff;
+    }
+
+
+    @media (min-width:$pc) {
+      min-height: 0;
+      padding: 0;
+      padding: rem(27) 0;
+      grid-template-columns: 1fr 1fr rem(245);
+      justify-items: start;
+    }
   }
 }
 
 .image {
-  @include adaptiveValue("height", 144, 300, 320, 768, 1);
+  @include adaptiveValue("height", 81, 144, 320, 768, 1);
+  @include adaptiveValue("width", 63, 144, 320, 768, 1);
   composes: ibg from global;
   grid-column: 1/2;
+  width: 63px;
+  justify-self: center;
+  align-self: center;
+
+  img {
+    object-fit: contain;
+  }
+
+  @media (min-width:$mobile) {
+    position: absolute;
+    width: 100%;
+    height: rem(208);
+    justify-self: unset;
+    align-self: unset;
+
+    img {
+      object-fit: none;
+      top: rem(-90);
+      object-position: bottom;
+    }
+  }
 }
 
 .content {
@@ -24,9 +69,20 @@
   display: grid;
   grid-column: 2/3;
 
+
+  @media (min-width:$mobile) {
+    grid-column: initial;
+  }
+
   .card_extra & {
     grid-column: 1/3;
     margin-bottom: rem(11);
+
+    @media (min-width:$pc) {
+      width: 100%;
+      grid-template-columns: 1fr rem(290) rem(40);
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -36,8 +92,32 @@
   @include adaptiveValue("width", 72, 400, 320, 768, 1);
   width: rem(72);
 
+  @media (min-width:$mobile) {
+    font-size: rem(20);
+    width: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
   .card_extra & {
     width: auto;
+
+
+    @media (min-width:$pc) {
+      display: block;
+      grid-column: 1/2;
+      text-align: left;
+    }
+  }
+
+
+}
+
+
+.list {
+  .card_extra & {
+    grid-column: 2/3;
   }
 }
 
@@ -49,17 +129,46 @@
   line-height: math.div(16, 12);
   width: 100%;
 
-  dd {
-    @include adaptiveValue("margin-right", 0, 110, 320, 768, 1);
+  @media (min-width:$mobile) {
+    font-size: rem(16);
+    border-bottom: 1px solid #cdcdcd;
+    padding: rem(11) 0;
   }
 
+  @media (min-width:$pc) {
 
+
+    .card_extra & {
+      border-bottom: unset;
+    }
+  }
+
+  dd {
+    @include adaptiveValue("margin-right", 0, 110, 320, 768, 1);
+
+    @media (min-width:$mobile) {
+      margin-right: 0;
+    }
+  }
 }
 
 .link {
   @extend %button;
-  align-self: stretch;
   display: flex;
   grid-column: 1/3;
   width: 100%;
+  @include adaptiveValue("margin-top", 15, 30, 320, 768, 1);
+
+
+  @media (min-width:$mobile) {
+    margin-top: rem(30);
+  }
+
+  .card_extra & {
+    margin-top: auto;
+
+    @media (min-width:$pc) {
+      grid-column: 3/4;
+    }
+  }
 }

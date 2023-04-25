@@ -3,10 +3,11 @@
 
 .addProducts {
   padding-top: rem(55);
-}
+  flex-grow: 2;
 
-.container {
-  composes: container from global;
+  @media (min-width:$pc){
+     padding-top: 0;
+  }
 }
 
 .title {
@@ -16,4 +17,15 @@
 
 .list {
   @extend %lineList;
+
+
+  @media (min-width:$mobile) {
+    li {
+
+      &:first-child::before,
+      &::after {
+        content: unset;
+      }
+    }
+  }
 }

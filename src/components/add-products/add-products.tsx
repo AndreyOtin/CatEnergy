@@ -12,18 +12,16 @@ type Props = {};
 export function AddProducts(props: Props) {
   return (
     <section className={styles.addProducts}>
-      <div className={styles.container}>
-        <h2 className={styles.title}>Дополнительные товары</h2>
-        <ul className={styles.list}>
-          {data.map((product, i) => (
-            <CatalogCard
-              key={`${i.toString()}`}
-              product={product}
-              variant={CatalogCardVariant.Extra}
-            />
-          ))}
-        </ul>
-      </div>
+      <h2 className={styles.title}>Дополнительные товары</h2>
+      <ul className={styles.list}>
+        {data.map((product, i) => (
+          <CatalogCard
+            key={`${i.toString()}`}
+            product={product}
+            variant={CatalogCardVariant.Extra}
+          />
+        ))}
+      </ul>
     </section>
   );
 }

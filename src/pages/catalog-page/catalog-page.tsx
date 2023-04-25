@@ -7,17 +7,17 @@ function CatalogPage() {
   return (
     <main>
       <Catalog />
-      <AddProducts />
-      <section>
-        <div className={styles.container}>
+      <div className={styles.container}>
+        <AddProducts />
+        <section className={styles.promo}>
           <div className={styles.ibg}>
             <h2 className={styles.title}>
               Закажите все и получите чехол для кота в подарок!
             </h2>
             <img src={gift} alt="gift" />
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
   );
 }
