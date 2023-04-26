@@ -55,11 +55,21 @@ function Example() {
         <div className={styles.sliderColumn}>
           {atMinMobile && <SliderContainer ref={sliderContainerRef} />}
           <div className={clsx(styles.ibg)}>
-            {isToggleActive ? (
-              <img src={afterImg} style={{ objectFit: 'contain' }} alt="cat" />
-            ) : (
-              <img src={beforeImg} alt="cat" />
-            )}
+            <img
+              src={afterImg}
+              style={{
+                objectFit: 'contain',
+                display: !isToggleActive ? 'none' : 'initial'
+              }}
+              alt="cat"
+            />
+            <img
+              style={{
+                display: isToggleActive ? 'none' : 'initial'
+              }}
+              src={beforeImg}
+              alt="cat"
+            />
           </div>
           <div
             className={clsx(
@@ -67,7 +77,7 @@ function Example() {
               isToggleActive && styles.toggler_active
             )}
           >
-            Было
+            Стало
             {atMaxMobile && (
               <button
                 onClick={() => {
@@ -77,7 +87,7 @@ function Example() {
               />
             )}
             {atMinMobile && <Slider ref={sliderRef} />}
-            Стало
+            Было
           </div>
         </div>
       </div>

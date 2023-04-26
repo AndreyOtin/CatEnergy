@@ -18,14 +18,12 @@
 .container {
   composes: container from global;
 
-
   @media (min-width:$tablet) {
     display: flex;
   }
 }
 
 .sliderColumn {
-
   @media (min-width:$tablet) {
     flex: 0 1 50%;
     margin-left: auto;
@@ -33,7 +31,6 @@
 }
 
 .contentBody {
-
   @media (min-width:$mobile) {
     display: flex;
     flex-wrap: wrap;
@@ -187,6 +184,7 @@
     border-radius: 10px;
     border: 2px solid #d6d6d6;
     padding: 0 rem(4);
+    @extend %mirror;
 
     &::before {
       content: '';
@@ -204,7 +202,7 @@
 
   &_active {
     button {
-      @extend %mirror;
+      transform: scale(1, -1);
     }
   }
 

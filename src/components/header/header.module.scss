@@ -31,7 +31,6 @@
 
   @media (min-width: $mobile) {
     width: auto;
-    margin-right: rem(50);
     padding: rem(15) 0 rem(16) 0;
   }
 
@@ -90,7 +89,7 @@
   }
 
   @media (min-width: $mobile) {
-    margin-top: 0;
+    margin-top: -6px;
     font-size: rem(18);
     line-height: math.div(24.86, 18);
 

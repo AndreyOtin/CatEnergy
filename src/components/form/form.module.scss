@@ -112,8 +112,6 @@
   }
 }
 
-
-
 .programmSet {
   display: grid;
   gap: rem(15);
@@ -172,8 +170,6 @@
       background-color: #68b738;
     }
   }
-
-  .title {}
 }
 
 .contactsSet {
@@ -201,6 +197,11 @@
     svg {
       position: absolute;
       right: rem(20);
+
+      @media (max-width:375px) {
+        right: rem(50);
+
+      }
     }
   }
 
