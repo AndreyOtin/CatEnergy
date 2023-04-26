@@ -1,22 +1,21 @@
 // @flow
 import * as React from 'react';
 import styles from './add-products.module.scss';
-import {
-  CatalogCard,
-  CatalogCardVariant
-} from '../cards/catalog-card/catalog-card';
-import { data } from '../catalog/catalog';
+import { CatalogCard } from '../cards/catalog-card/catalog-card';
+import { useAppSelector } from '../../hooks/hooks';
+import { selectExtraProducts } from '../../store/app-slice/app-slice';
+import { CatalogCardVariant } from '../../consts/enum';
 
-type Props = {};
+export function AddProducts() {
+  const products = useAppSelector(selectExtraProducts);
 
-export function AddProducts(props: Props) {
   return (
     <section className={styles.addProducts}>
       <h2 className={styles.title}>Дополнительные товары</h2>
       <ul className={styles.list}>
-        {data.map((product, i) => (
+        {products.map((product) => (
           <CatalogCard
-            key={`${i.toString()}`}
+            key={product.id}
             product={product}
             variant={CatalogCardVariant.Extra}
           />

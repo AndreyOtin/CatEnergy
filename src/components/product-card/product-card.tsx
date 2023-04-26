@@ -1,8 +1,5 @@
 import { Link } from 'react-router-dom';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-type ProductCardProps = {};
-
 function ProductCard() {
   return (
     <li className="item">

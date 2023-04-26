@@ -28,7 +28,6 @@
 
   @if ($responsiveType==1) {
 
-    // Отзывчивая
     .container {
 
       @if ($maxWidthContainer>0) {
@@ -53,7 +52,6 @@
 
   @else {
 
-    // По брейк-поинтам
     .container {
       margin: 0 auto;
 

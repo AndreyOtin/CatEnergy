@@ -19,7 +19,6 @@ const Spinner = ({ children, style, variant = 'primary', isActive = false }: Spi
       alignItems: 'center',
       height: variant === 'primary' ? '100vh' : '100%',
       width: '100%',
-      backgroundImage: 'linear-gradient(-180deg,#180202 0%,#000 100%)',
       ...style
     }}
     >

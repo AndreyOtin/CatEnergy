@@ -3,7 +3,7 @@
 .container {
   composes: container from global;
 
-  @media (min-width:$mobile){
+  @media (min-width:$mobile) {
     padding: 0 rem(30);
   }
 }
@@ -47,8 +47,6 @@
     column-gap: rem(192);
     row-gap: rem(141);
 
-
-
     & li::after {
       display: initial;
       position: absolute;
@@ -60,8 +58,9 @@
     }
 
   }
-  @media (min-width:$tablet){
-     column-gap: rem(135);
+
+  @media (min-width:$tablet) {
+    column-gap: rem(135);
   }
 }
 
@@ -70,7 +69,6 @@
   column-gap: rem(20);
   align-items: center;
   line-height: 1.29;
-
 
   &::before {
     flex: 0 0 rem(60);

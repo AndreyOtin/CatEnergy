@@ -20,5 +20,18 @@ export enum AppRoute {
   Catalog = '/catalog',
   Program = '/program',
   Login = '/login',
-  Form = '/form'
+}
+
+export enum APIRoute {
+  Poducts = 'fakeApi/products',
+  ExtraProducts = 'fakeApi/extra-products'
+}
+
+export enum MaxElementCount {
+  CatalogCard = 7,
+}
+
+export enum CatalogCardVariant {
+  Extra = 'extra',
+  Primary = 'primary'
 }
