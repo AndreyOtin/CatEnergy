@@ -20,29 +20,29 @@ export function CatalogCard({
   const isPrimary = variant === CatalogCardVariant.Primary;
 
   const primaryListElement = (
-    <dl className={styles.list}>
-      <div className={styles.group}>
-        <dl>Объем</dl>
-        <dd> {volume} г</dd>
-      </div>
-      <div className={styles.group}>
-        <dl>Вкус</dl>
-        <dd>{makeFirstLetterUpperCase(flavor)}</dd>
-      </div>
-      <div className={styles.group}>
-        <dl>Цена</dl>
-        <dd>{price} Р.</dd>
-      </div>
-    </dl>
+    <ul className={styles.list}>
+      <li className={styles.group}>
+        <p>Объем</p>
+        <p> {volume} г</p>
+      </li>
+      <li className={styles.group}>
+        <p>Вкус</p>
+        <p>{makeFirstLetterUpperCase(flavor)}</p>
+      </li>
+      <li className={styles.group}>
+        <p>Цена</p>
+        <p>{price} Р.</p>
+      </li>
+    </ul>
   );
 
   const extraListElement = (
-    <dl className={styles.list}>
-      <div className={styles.group}>
+    <ul className={styles.list}>
+      <li className={styles.group}>
         <dl>{volumeName}</dl>
         <dd> {price} Р.</dd>
-      </div>
-    </dl>
+      </li>
+    </ul>
   );
 
   const imageElement = (

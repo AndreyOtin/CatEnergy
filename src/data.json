@@ -1,0 +1,92 @@
+[
+  {
+    "flavor": "манго",
+    "price": "543",
+    "volume": 345,
+    "volumeName": "литр",
+    "title": "чизбургер",
+    "content": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+    "image": "https://loremflickr.com/640/480/food?lock=82909"
+  },
+  {
+    "flavor": "манго",
+    "price": "831",
+    "volume": 383,
+    "volumeName": "упаковка (100 г)",
+    "title": "чизбургер",
+    "content": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+    "image": "https://loremflickr.com/640/480/food?lock=79363"
+  },
+  {
+    "flavor": "клубничный",
+    "price": "247",
+    "volume": 800,
+    "volumeName": "упаковка (30 г)",
+    "title": "хот-дог",
+    "content": "The Football Is Good For Training And Recreational Purposes",
+    "image": "https://loremflickr.com/640/480/food?lock=70728"
+  },
+  {
+    "flavor": "кокосовый",
+    "price": "644",
+    "volume": 139,
+    "volumeName": "упаковка (30 г)",
+    "title": "хот-дог",
+    "content": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+    "image": "https://loremflickr.com/640/480/food?lock=79656"
+  },
+  {
+    "flavor": "шоколадный",
+    "price": "833",
+    "volume": 816,
+    "volumeName": "упаковка (30 г)",
+    "title": "гамбургер",
+    "content": "The Football Is Good For Training And Recreational Purposes",
+    "image": "https://loremflickr.com/640/480/food?lock=92958"
+  },
+  {
+    "flavor": "шоколадный",
+    "price": "960",
+    "volume": 774,
+    "volumeName": "упаковка (100 г)",
+    "title": "гренки",
+    "content": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+    "image": "https://loremflickr.com/640/480/food?lock=38937"
+  },
+  {
+    "flavor": "манго",
+    "price": "773",
+    "volume": 111,
+    "volumeName": "упаковка (100 г)",
+    "title": "хот-дог",
+    "content": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+    "image": "https://loremflickr.com/640/480/food?lock=75056"
+  },
+  {
+    "flavor": "манго",
+    "price": "953",
+    "volume": 305,
+    "volumeName": "упаковка (100 г)",
+    "title": "хот-дог",
+    "content": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+    "image": "https://loremflickr.com/640/480/food?lock=39176"
+  },
+  {
+    "flavor": "манго",
+    "price": "167",
+    "volume": 342,
+    "volumeName": "упаковка (30 г)",
+    "title": "гамбургер",
+    "content": "Carbonite web goalkeeper gloves are ergonomically designed to give easy fit",
+    "image": "https://loremflickr.com/640/480/food?lock=67884"
+  },
+  {
+    "flavor": "кокосовый",
+    "price": "644",
+    "volume": 152,
+    "volumeName": "упаковка (100 г)",
+    "title": "хот-дог",
+    "content": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+    "image": "https://loremflickr.com/640/480/food?lock=72924"
+  }
+]

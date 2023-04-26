@@ -5,6 +5,7 @@ import { worker } from './mocks/server';
 import { store } from './store';
 import { Provider } from 'react-redux';
 import HistoryRouter from './components/history-router/history-router';
+import axios from 'axios';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -19,7 +20,7 @@ async function start() {
     <React.StrictMode>
       <HistoryRouter>
         <Provider store={store}>
-          <App/>
+          <App />
         </Provider>
       </HistoryRouter>
     </React.StrictMode>
